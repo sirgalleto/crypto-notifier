@@ -1,8 +1,12 @@
+const path = require('path');
 const notifier = require('node-notifier');
 const NotificationCenter = require('node-notifier/notifiers/notifysend');
 const formatNum = require('format-num')
 const scrapCurrencies = require('./currencyScraper');
 const db = require('./db');
+
+const increaseIcon = 'increase.png';
+const decreaseIcon = 'decrease.png';
 
 const timeToUpdate = 60000;
 const currencies = [
@@ -32,9 +36,12 @@ async function start() {
                 const increase = price > previousPrice;
                 const percent = calculatePercent(price, previousPrice).toFixed(4);
 
+                console.info(path.join(__dirname, 'icons', Boolean(increase) ? 'increase.png' : 'decrease.png'));
+
                 const notificationOptions = {
                     title: `${displayCurrencyName}: $${displayPrice}`,
                     message: !previousPrice ? ' ' : `${increase ? 'UP' : 'DOWN'} by ${percent}%`,
+                    icon: path.join(__dirname, 'icons', Boolean(increase) ? increaseIcon : decreaseIcon),
                 };
 
                 setTimeout(() => {
