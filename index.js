@@ -17,19 +17,19 @@ const currencies = [
 async function start() {
     try {
         const prices = await scrapCurrencies();
-        const lastPrices = db.getState();
+        const previousPrices = db.getState();
 
         currencies.forEach((currency, index) => {
             const displayCurrencyName = currency.split('_').join(' ').toUpperCase();
             const displayPrice = prices[currency];
             const price = Number(prices[currency]);
-            const lastPrice = Number(lastPrices[currency]);
+            const previousPrice = Number(previousPrices[currency]);
 
-            const stable = price === lastPrice;
+            const stable = price === previousPrice;
 
             if (!stable) {
-                const increase = price > lastPrice;
-                const percent = calculatePercent(price, lastPrice).toFixed(4);
+                const increase = price > previousPrice;
+                const percent = calculatePercent(price, previousPrice).toFixed(4);
 
                 const notificationOptions = {
                     title: `${displayCurrencyName}: $${displayPrice}`,
