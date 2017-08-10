@@ -11,4 +11,4 @@ Send system notifications with the your favorite currency value.
 
 Use `$ npm start` to start the project
 
-You can configurate the available values to notify in `index.js:6`
+You can configure the available values to notify in `index.js:6`
