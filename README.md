@@ -13,4 +13,4 @@ Use `$ npm start` to start the project.
 
 ## Customization
 
-You can configure the available currencies to notify in `index.js:12` and the time in _ms_ to update in `index.js:11`.
+You can configure the available currencies to notify in the array `currencies` wich is filled with the available currencies and the time _in ms_ in the var `timeToUpdate`.
