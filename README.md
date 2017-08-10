@@ -13,4 +13,6 @@ Use `$ npm start` to start the project.
 
 ## Customization
 
-You can configure the available currencies to notify in the array `currencies` wich is filled with the available currencies and the time _in ms_ in the var `timeToUpdate`.
+You can configure the available currencies to notify in the array `currencies` wich is filled with the available currencies and the time in _ms_ in the var `timeToUpdate`.
+
+*Currencies available*: `btc_mx`, `eth_mxn`, `xrp_btc`, `xrp_mxn`, `eth_bt`, `bch_btc`
