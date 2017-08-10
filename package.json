@@ -1,0 +1,21 @@
+{
+    "name": "blockchain-notifier",
+    "version": "1.0.0",
+    "description": "Receive notifications about the actual state of a currency ",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "nodemon index.js",
+        "dev": "nodemon --watch index.js"
+    },
+    "author": "Sebastián Osorio <sir@galleto.xyz>",
+    "license": "MIT ",
+    "dependencies": {
+        "format-num": "^1.0.0",
+        "node-notifier": "^5.1.2",
+        "scrape-it": "^3.3.2"
+    },
+    "devDependencies": {
+        "nodemon": "^1.11.0"
+    }
+}
