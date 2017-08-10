@@ -36,8 +36,6 @@ async function start() {
                 const increase = price > previousPrice;
                 const percent = calculatePercent(price, previousPrice).toFixed(4);
 
-                console.info(path.join(__dirname, 'icons', Boolean(increase) ? 'increase.png' : 'decrease.png'));
-
                 const notificationOptions = {
                     title: `${displayCurrencyName}: $${displayPrice}`,
                     message: !previousPrice ? ' ' : `${increase ? 'UP' : 'DOWN'} by ${percent}%`,
