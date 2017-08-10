@@ -27,7 +27,7 @@ async function start() {
 
             if (!stable) {
                 const increase = price > lastPrice;
-                const percent = calculatePercent(price, lastPrice).toFixed(3);
+                const percent = calculatePercent(price, lastPrice).toFixed(4);
 
                 const notificationOptions = {
                     title: `${displayCurrencyName}: $${prices[currency]}`,
@@ -51,15 +51,8 @@ async function start() {
 }
 
 function calculatePercent(newPrice, oldPrice) {
-    const increase = newPrice > oldPrice;
-
-    if (increase) {
-        const increaseValue = newPrice = oldPrice;
-        return increaseValue + (oldPrice * 100);
-    } else {
-        const decreaseValue = oldPrice - newPrice;
-        return decreaseValue / (newPrice * 100)
-    }
+    const increaseValue = newPrice - oldPrice;
+    return (increaseValue / oldPrice) * 100;
 }
 
 start();
