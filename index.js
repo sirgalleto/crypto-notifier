@@ -4,6 +4,7 @@ const formatNum = require('format-num')
 const scrapCurrencies = require('./currencyScraper');
 const db = require('./db');
 
+const timeToUpdate = 60000;
 const currencies = [
     'btc_mxn',
     "eth_mxn",
@@ -20,6 +21,7 @@ async function start() {
 
         currencies.forEach((currency, index) => {
             const displayCurrencyName = currency.split('_').join(' ').toUpperCase();
+            const displayPrice = prices[currency];
             const price = Number(prices[currency]);
             const lastPrice = Number(lastPrices[currency]);
 
@@ -30,7 +32,7 @@ async function start() {
                 const percent = calculatePercent(price, lastPrice).toFixed(4);
 
                 const notificationOptions = {
-                    title: `${displayCurrencyName}: $${prices[currency]}`,
+                    title: `${displayCurrencyName}: $${displayPrice}`,
                     message: `${increase ? 'UP' : 'DOWN'} by ${percent}%`,
                 };
 
@@ -46,7 +48,7 @@ async function start() {
     } catch (e) {
         console.error('There was a problem updating the values');
     } finally {
-        setTimeout(start, 60000);
+        setTimeout(start, timeToUpdate);
     }
 }
 
