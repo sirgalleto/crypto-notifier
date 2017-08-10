@@ -22,6 +22,7 @@ async function start() {
         currencies.forEach((currency, index) => {
             const displayCurrencyName = currency.split('_').join(' ').toUpperCase();
             const displayPrice = prices[currency];
+
             const price = Number(prices[currency]);
             const previousPrice = Number(previousPrices[currency]);
 
@@ -33,7 +34,7 @@ async function start() {
 
                 const notificationOptions = {
                     title: `${displayCurrencyName}: $${displayPrice}`,
-                    message: `${increase ? 'UP' : 'DOWN'} by ${percent}%`,
+                    message: !previousPrice ? ' ' : `${increase ? 'UP' : 'DOWN'} by ${percent}%`,
                 };
 
                 setTimeout(() => {
