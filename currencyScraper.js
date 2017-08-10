@@ -3,7 +3,7 @@ const scrapeIt = require('scrape-it');
 module.exports = async function() {
     let data = await scrapeIt('https://bitso.com', {
         lastPrices: {
-            selector: '#lastPrices',
+            selector: '#lastPrice',
         },
     });
 
