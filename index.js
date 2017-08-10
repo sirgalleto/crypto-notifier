@@ -14,31 +14,40 @@ const currencies = [
 ];
 
 async function start() {
-    const prices = await scrapCurrencies();
-    const lastPrices = db.getState();
+    try {
+        const prices = await scrapCurrencies();
+        const lastPrices = db.getState();
 
-    currencies.forEach((currency, index) => {
-        const price = Number(prices[currency]);
-        const lastPrice = Number(lastPrices[currency]);
+        currencies.forEach((currency, index) => {
+            const displayCurrencyName = currency.split('_').join(' ').toUpperCase();
+            const price = Number(prices[currency]);
+            const lastPrice = Number(lastPrices[currency]);
 
-        const stable = price === lastPrice;
-        const increase = price > lastPrice;
-        const percent = calculatePercent(price, lastPrice).toFixed(3);
+            const stable = price === lastPrice;
 
-        const notificationOptions = {
-            title: `${currency.split('_').join(' ').toUpperCase()}: $${prices[currency]}`,
-            message: stable ? 'STABLE' : `${increase ? 'UP' : 'DOWN'} by ${percent}%`,
-            timeout: 6000,
-            wait: true
-        };
+            if (!stable) {
+                const increase = price > lastPrice;
+                const percent = calculatePercent(price, lastPrice).toFixed(3);
 
-        setTimeout(() => {
-            notifier.notify(notificationOptions);
-        }, 5000 * index);
-    });
+                const notificationOptions = {
+                    title: `${displayCurrencyName}: $${prices[currency]}`,
+                    message: `${increase ? 'UP' : 'DOWN'} by ${percent}%`,
+                };
 
-    db.setState(prices);
-    setTimeout(start, 60000);
+                setTimeout(() => {
+                    notifier.notify(notificationOptions);
+                }, 5000 * index);
+            } else {
+                console.info(`${displayCurrencyName} is stable`);
+            }
+        });
+
+        db.setState(prices);
+    } catch (e) {
+        console.error('There was a problem updating the values');
+    } finally {
+        setTimeout(start, 60000);
+    }
 }
 
 function calculatePercent(newPrice, oldPrice) {
