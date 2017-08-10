@@ -9,6 +9,8 @@ Send system notifications with the your favorite currency value.
 
 ## Run
 
-Use `$ npm start` to start the project
+Use `$ npm start` to start the project.
 
-You can configure the available values to notify in `index.js:6`
+## Customization
+
+You can configure the available values to notify in `index.js:8` and the time in _ms_ to update in `index.js:7`.
