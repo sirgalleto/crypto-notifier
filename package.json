@@ -5,13 +5,14 @@
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "nodemon index.js",
-        "dev": "nodemon --watch index.js"
+        "start": "node index.js",
+        "dev": "nodemon --ignore db.json --watch index.js"
     },
     "author": "Sebastián Osorio <sir@galleto.xyz>",
     "license": "MIT ",
     "dependencies": {
         "format-num": "^1.0.0",
+        "lowdb": "^0.16.2",
         "node-notifier": "^5.1.2",
         "scrape-it": "^3.3.2"
     },
