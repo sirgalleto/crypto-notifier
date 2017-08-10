@@ -38,7 +38,7 @@ async function start() {
 
                 const notificationOptions = {
                     title: `${displayCurrencyName}: $${displayPrice}`,
-                    message: !previousPrice ? ' ' : `${increase ? 'UP' : 'DOWN'} by ${percent}%`,
+                    message: !previousPrice ? ' ' : `${percent}%`,
                     icon: path.join(__dirname, 'icons', Boolean(increase) ? increaseIcon : decreaseIcon),
                 };
 
