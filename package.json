@@ -17,6 +17,8 @@
     "format-num": "^1.0.0",
     "lowdb": "^0.16.2",
     "node-notifier": "^5.1.2",
+    "request": "^2.81.0",
+    "request-promise-native": "^1.0.4",
     "scrape-it": "^3.3.2"
   },
   "devDependencies": {

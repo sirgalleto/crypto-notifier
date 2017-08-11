@@ -10,7 +10,12 @@ const decreaseIcon = 'decrease.png';
 
 const timeToUpdate = 60000;
 const currencies = [
-    'eth_mxn',
+  'btc_mxn',
+  'eth_mxn',
+  'xrp_btc',
+  'xrp_mxn',
+  'eth_btc',
+  'bch_btc',
 ];
 
 async function start() {
@@ -47,7 +52,7 @@ async function start() {
 
         db.setState(prices);
     } catch (e) {
-        console.error(e.name + ": " + e.message);
+        console.error(e.name + ': ' + e.message);
     } finally {
         setTimeout(start, timeToUpdate);
     }
