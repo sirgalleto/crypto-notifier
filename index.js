@@ -4,6 +4,7 @@ const NotificationCenter = require('node-notifier/notifiers/notifysend');
 const formatNum = require('format-num')
 const scrapCurrencies = require('./currencyScraper');
 const db = require('./db');
+const getBitsoExchange = require('./services/bitso');
 
 const increaseIcon = 'increase.png';
 const decreaseIcon = 'decrease.png';
@@ -11,19 +12,20 @@ const decreaseIcon = 'decrease.png';
 const timeToUpdate = 60000;
 const currencies = [
     'btc_mxn',
-    "eth_mxn",
-    "xrp_btc",
-    "xrp_mxn",
-    "eth_btc",
-    "bch_btc",
+    'eth_mxn',
+    'xrp_btc',
+    'xrp_mxn',
+    'eth_btc',
+    'bch_btc',
 ];
 
 async function start() {
     try {
-        const prices = await scrapCurrencies();
         const previousPrices = db.getState();
+        const prices = await getBitsoExchange(currencies);
 
         currencies.forEach((currency, index) => {
+
             const displayCurrencyName = currency.split('_').join(' ').toUpperCase();
             const displayPrice = prices[currency];
 
@@ -52,7 +54,7 @@ async function start() {
 
         db.setState(prices);
     } catch (e) {
-        console.error('There was a problem updating the values');
+        console.error('There was a problem updating the values', e);
     } finally {
         setTimeout(start, timeToUpdate);
     }

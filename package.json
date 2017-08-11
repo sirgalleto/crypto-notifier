@@ -1,22 +1,24 @@
 {
-    "name": "blockchain-notifier",
-    "version": "1.0.0",
-    "description": "Receive notifications about the actual state of a currency ",
-    "main": "index.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "node index.js",
-        "dev": "nodemon --ignore db.json --watch index.js"
-    },
-    "author": "Sebastián Osorio <sir@galleto.xyz>",
-    "license": "MIT ",
-    "dependencies": {
-        "format-num": "^1.0.0",
-        "lowdb": "^0.16.2",
-        "node-notifier": "^5.1.2",
-        "scrape-it": "^3.3.2"
-    },
-    "devDependencies": {
-        "nodemon": "^1.11.0"
-    }
+  "name": "blockchain-notifier",
+  "version": "1.0.0",
+  "description": "Receive notifications about the actual state of a currency ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon --ignore db.json --watch index.js"
+  },
+  "author": "Sebastián Osorio <sir@galleto.xyz>",
+  "license": "MIT ",
+  "dependencies": {
+    "async-await": "^0.1.40",
+    "asyncawait": "^1.0.6",
+    "format-num": "^1.0.0",
+    "lowdb": "^0.16.2",
+    "node-notifier": "^5.1.2",
+    "scrape-it": "^3.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
 }
