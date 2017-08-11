@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Receive notifications about the actual state of a currency ",
   "main": "index.js",
+  "contributors": [
+    "Timothee Givois <tim.givois.mendez@gmail.com>"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
