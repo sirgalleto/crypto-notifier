@@ -11,8 +11,6 @@
   "author": "Sebastián Osorio <sir@galleto.xyz>",
   "license": "MIT ",
   "dependencies": {
-    "async-await": "^0.1.40",
-    "asyncawait": "^1.0.6",
     "format-num": "^1.0.0",
     "lowdb": "^0.16.2",
     "node-notifier": "^5.1.2",
