@@ -20,8 +20,6 @@ program
     )
     .parse(process.argv);
 
-console.log(program.currencies);
-
 start({
     timeToUpdate: program.time,
     currencies: program.currencies
