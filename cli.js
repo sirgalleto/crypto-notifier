@@ -15,7 +15,7 @@ program
     .option('-T, --time [time]', 'Time to update in ms')
     .option(
         '-C, --currencies [currencies]',
-        `Currencies to get separated by comma, available list: ${currenciesAvailable}`,
+        `Currencies to notify separated by comma. Currencies available: ${currenciesAvailable}`,
         list
     )
     .parse(process.argv);
