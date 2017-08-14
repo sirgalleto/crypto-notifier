@@ -8,8 +8,8 @@
     ],
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "node index.js",
-        "dev": "nodemon --ignore db.json --watch index.js"
+        "start": "node cli.js",
+        "dev": "nodemon --ignore db.json --watch cli.js"
     },
     "bin": {
         "blockchain-notifier": "cli.js"
