@@ -12,10 +12,10 @@ function list(val) {
 
 program
     .version('0.0.1')
-    .option('-T, --time [time]', 'Time to update in ms')
+    .option('-T, --time [time]', 'time to update in ms')
     .option(
         '-C, --currencies [currencies]',
-        `Currencies to notify separated by comma. Currencies available: ${currenciesAvailable}`,
+        `currencies to notify separated by comma. Currencies available: ${currenciesAvailable}`,
         list
     )
     .parse(process.argv);
