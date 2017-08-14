@@ -1,18 +1,20 @@
 # Blockchain Notifier
 
-Send system notifications with the your favorite currency value.
+Send system notifications with your favorite currency value.
 
 ## Install
 
-1. Clone the repo.
-2. `$ npm install`.
+`$ npm install -g blockchain-notifier`.
 
 ## Run
 
-Use `$ npm start` to start the project.
+Usage: `blockchain-notifier [options]`
 
-## Customization
+### Options
 
-You can configure the available currencies to notify in the array `currencies` wich is filled with the available currencies and the time in _ms_ in the var `timeToUpdate`.
+-  `-V, --version`: Output the version number
+-  `-T, --time [time]`: time to update in ms
+- `-C, --currencies [currencies]`: currencies to notify separated by comma.
+- `--h, --help`: output usage information
 
 *Currencies available*: `btc_mx`, `eth_mxn`, `xrp_btc`, `xrp_mxn`, `eth_bt`, `bch_btc`
