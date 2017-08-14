@@ -1,29 +1,22 @@
+const _ = require('lodash');
 const path = require('path');
 const notifier = require('node-notifier');
-const NotificationCenter = require('node-notifier/notifiers/notifysend');
-const formatNum = require('format-num')
+const formatNum = require('format-num');
+const config = require('config');
 const db = require('./db');
 const getBitsoExchange = require('./services/bitso');
 
 const increaseIcon = 'increase.png';
 const decreaseIcon = 'decrease.png';
 
-const timeToUpdate = 60000;
-const currencies = [
-  'btc_mxn',
-  'eth_mxn',
-  'xrp_btc',
-  'xrp_mxn',
-  'eth_btc',
-  'bch_btc',
-];
+module.exports = async function start(props) {
+    const _props = _.defaults(props, config.get('defaultProps'));
 
-async function start() {
     try {
         const previousPrices = db.getState();
-        const prices = await getBitsoExchange(currencies);
+        const prices = await getBitsoExchange(_props.currencies);
 
-        currencies.forEach((currency, index) => {
+        _props.currencies.forEach((currency, index) => {
             const displayCurrencyName = currency.split('_').join(' ').toUpperCase();
             const displayPrice = prices[currency];
 
@@ -54,7 +47,7 @@ async function start() {
     } catch (e) {
         console.error(e.name + ': ' + e.message);
     } finally {
-        setTimeout(start, timeToUpdate);
+        setTimeout(() => start(props), _props.timeToUpdate);
     }
 }
 
@@ -62,5 +55,3 @@ function calculatePercent(newPrice, oldPrice) {
     const increaseValue = newPrice - oldPrice;
     return (increaseValue / oldPrice) * 100;
 }
-
-start();
