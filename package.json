@@ -4,7 +4,8 @@
     "description": "Receive notifications about the actual state of a currency ",
     "main": "index.js",
     "contributors": [
-        "Timothee Givois <tim.givois.mendez@gmail.com>"
+        "Timothee Givois <tim.givois.mendez@gmail.com>",
+        "René Michel <yo@renemichel.org>"
     ],
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
