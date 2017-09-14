@@ -4,7 +4,7 @@ const notifier = require('node-notifier');
 const formatNum = require('format-num');
 const db = require('./db');
 const getBitsoExchange = require('./services/bitso');
-const defaultProps = require('./config/defaultProps.json');
+const defaultProps = require('./config/default.json');
 
 const increaseIcon = 'increase.png';
 const decreaseIcon = 'decrease.png';
