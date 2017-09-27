@@ -17,4 +17,4 @@ Usage: `blockchain-notifier [options]`
 - `-C, --currencies [currencies]`: currencies to notify separated by comma.
 - `--h, --help`: output usage information
 
-*Currencies available*: `btc_mx`, `eth_mxn`, `xrp_btc`, `xrp_mxn`, `eth_bt`, `bch_btc`
+*Currencies available*: `btc_mxn`, `eth_mxn`, `xrp_btc`, `xrp_mxn`, `eth_bt`, `bch_btc`
