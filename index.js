@@ -2,15 +2,15 @@ const _ = require('lodash');
 const path = require('path');
 const notifier = require('node-notifier');
 const formatNum = require('format-num');
-const config = require('config');
 const db = require('./db');
 const getBitsoExchange = require('./services/bitso');
+const defaultProps = require('./config/default.json');
 
 const increaseIcon = 'increase.png';
 const decreaseIcon = 'decrease.png';
 
 module.exports = async function start(props) {
-    const _props = _.defaults(props, config.get('defaultProps'));
+    const _props = _.defaults(props, defaultProps);
 
     try {
         const previousPrices = db.getState();

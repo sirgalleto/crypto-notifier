@@ -1,13 +1,11 @@
 {
-    "defaultProps": {
-        "timeToUpdate": 60000,
-        "currencies": [
-            "btc_mxn",
-            "eth_mxn",
-            "xrp_btc",
-            "xrp_mxn",
-            "eth_btc",
-            "bch_btc"
-        ]
-    }
+    "timeToUpdate": 60000,
+    "currencies": [
+        "btc_mxn",
+        "eth_mxn",
+        "xrp_btc",
+        "xrp_mxn",
+        "eth_btc",
+        "bch_btc"
+    ]
 }

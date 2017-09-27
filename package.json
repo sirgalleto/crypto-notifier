@@ -1,33 +1,31 @@
 {
-    "name": "blockchain-notifier",
-    "version": "0.0.1",
-    "description": "Receive notifications about the actual state of a currency ",
-    "main": "index.js",
-    "contributors": [
-        "Timothee Givois <tim.givois.mendez@gmail.com>",
-        "René Michel <yo@renemichel.org>"
-    ],
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "node cli.js",
-        "dev": "nodemon --ignore db.json --watch cli.js"
-    },
-    "bin": {
-        "blockchain-notifier": "cli.js"
-    },
-    "author": "Sebastián Osorio <sir@galleto.xyz>",
-    "license": "MIT ",
-    "dependencies": {
-        "commander": "^2.11.0",
-        "config": "^1.26.2",
-        "format-num": "^1.0.0",
-        "lowdb": "^0.16.2",
-        "node-notifier": "^5.1.2",
-        "request": "^2.81.0",
-        "request-promise-native": "^1.0.4",
-        "scrape-it": "^3.3.2"
-    },
-    "devDependencies": {
-        "nodemon": "^1.11.0"
-    }
+  "name": "blockchain-notifier",
+  "version": "0.0.2",
+  "description": "Receive notifications about the actual state of a currency ",
+  "main": "index.js",
+  "contributors": [
+    "Timothee Givois <tim.givois.mendez@gmail.com>"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon --ignore db.json --watch index.js"
+  },
+  "bin": {
+    "blockchain-notifier": "cli.js"
+  },
+  "author": "Sebastián Osorio <sir@galleto.xyz>",
+  "license": "MIT ",
+  "dependencies": {
+    "commander": "^2.11.0",
+    "format-num": "^1.0.0",
+    "lowdb": "^0.16.2",
+    "node-notifier": "^5.1.2",
+    "request": "^2.81.0",
+    "request-promise-native": "^1.0.4",
+    "scrape-it": "^3.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
 }

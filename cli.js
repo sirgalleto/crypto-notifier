@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
 const program = require('commander');
-const config = require('config');
+const config = require('./config/default.json');
 const start = require('./index');
 
-const currenciesAvailable = config.get('defaultProps.currencies');
+const currenciesAvailable = config.currencies;
 
 function list(val) {
     return val.split(',');
